@@ -79,9 +79,11 @@ email.addEventListener("focus", () => {
 let regex_PW = /^[a-zA-Z0-9#?!@$%^&*-]+$/;
 PW.addEventListener("input", () => {
   checkvalue(regex_PW.test(PW.value), "PW", 3);
+  checkvalue(PW.value === rePW.value, "rePW", 4);
 });
 PW.addEventListener("focus", () => {
   checkvalue(regex_PW.test(PW.value), "PW", 3);
+  checkvalue(PW.value === rePW.value, "rePW", 4);
 });
 rePW.addEventListener("input", () => {
   checkvalue(PW.value === rePW.value, "rePW", 4);

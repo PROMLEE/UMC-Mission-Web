@@ -38,6 +38,11 @@ body {
   white-space: nowrap;
   text-align: start;
 }
+.inputbox {
+  font-size: 15px;
+  height: 15px;
+  outline: none;
+}
 #form input {
   background-color: transparent;
   border: none;
