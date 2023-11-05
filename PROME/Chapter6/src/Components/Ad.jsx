@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import AdPage from "../Components/AdPage";
-import "../index.css";
 
 class Ad extends Component {
   constructor(props) {
@@ -21,9 +20,7 @@ class Ad extends Component {
     return (
       <div>
         {!this.state.isClicked && <AdPage />}
-        <button className="Adbutton" onClick={this.handletoggleClick}>
-          {buttonText}
-        </button>
+        <button onClick={this.handletoggleClick}>{buttonText}</button>
       </div>
     );
   }

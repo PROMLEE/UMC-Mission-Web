@@ -6,4 +6,4 @@ Mission :
 
 [구현 page link](https://promleemissionch6.netlify.app/)  
 
-![구현 image](sources/result2.png)  
+![구현 image](sources/result1.png)  
