@@ -7,14 +7,14 @@ import { getID, getPW } from "../Redux/state";
 export default function Login() {
   const ID = useSelector((state) => state.state.id);
   const PW = useSelector((state) => state.state.pw);
-  const [isLoading, setIsLoading] = useState(false);
+  const [Loading, setLoading] = useState(false);
   var url = "https://umc-web.onrender.com/user/login";
   const dispatch = useDispatch();
   async function Loginclick(e) {
     e.preventDefault();
     try {
-      const API = setIsLoading(true);
-      await axios.post(url, {
+      setLoading(true);
+      const API = await axios.post(url, {
         id: ID,
         pw: PW,
       });
@@ -25,7 +25,7 @@ export default function Login() {
       console.log("에러 발생 :", err);
     }
     setTimeout(() => {
-      setIsLoading(false);
+      setLoading(false);
     }, 1500);
   }
   return (
@@ -39,8 +39,8 @@ export default function Login() {
         onChange={(e) => dispatch(getPW(e.target.value))}
         placeholder="PW를 입력하세요"
       />
-      <Button type="submit" disabled={isLoading}>
-        {isLoading ? "Loading..." : "로그인"}
+      <Button type="submit" disabled={Loading}>
+        {Loading ? "Loading" : "로그인"}
       </Button>
     </Form>
   );
